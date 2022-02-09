@@ -17,7 +17,9 @@ class PageList extends StatelessWidget {
             return ListTile(
               leading: Image.asset(tabelalist[currency].icon),
               title: Text(tabelalist[currency].label),
-              //subtitle: double(tabela_list[currency].price),
+              subtitle: Text(tabelalist[currency].sigla),
+              trailing: Text(tabelalist[currency].price.toString()),
+              //subtitle: Text(tabelalist[currency].price.toString()),
             );
           },
           separatorBuilder: (_, __) => const Divider(),
