@@ -6,22 +6,27 @@ class CurrencyController {
   static List<Currency> table = [
     Currency(
         label: 'Bitcoin',
-        icon: 'images/bitcoin.png',
+        icon: 'images/bitcoin-btc-logo.png',
         price: 231.858,
         sigla: 'BTC'),
     Currency(
         label: 'Ethereum',
-        icon: 'images/ethereum.png',
+        icon: 'images/ethereum-eth-logo.png',
+        price: 16.407,
+        sigla: 'ETH'),
+    Currency(
+        label: 'Shiba Inu',
+        icon: 'images/shiba-inu-shib-logo.png',
         price: 16.407,
         sigla: 'ETH'),
     Currency(
         label: 'Litecoin',
-        icon: 'images/litecoin_icon.png',
+        icon: 'images/litecoin.png',
         price: 707.00,
         sigla: 'LTC'),
     Currency(
         label: 'Dogecoin',
-        icon: 'images/doge.png',
+        icon: 'images/dogecoin-doge-logo.png',
         price: 707.00,
         sigla: 'DOGE'),
     Currency(
@@ -31,23 +36,48 @@ class CurrencyController {
         sigla: 'XRM'),
     Currency(
         label: 'Vertcoin',
-        icon: 'images/vertcoin.png',
+        icon: 'images/vertcoin-vtc-logo.png',
         price: 2,
         sigla: 'VERT'),
     Currency(
-        label: 'Z-cash',
-        icon: 'images/z-cash.png',
+        label: 'Baby Doge',
+        icon: 'images/baby-doge-coin-babydoge-logo.png',
         price: 698.00,
-        sigla: 'ZCASH'),
-    Currency(
-        label: 'Cardano',
-        icon: 'images/ada_cardano.png',
-        price: 6.21,
-        sigla: 'ADA'),
+        sigla: 'Baby'),
     Currency(
         label: 'Neo',
-        icon: 'images/neo-cripto.png',
+        icon: 'images/neo-neo-logo.png',
         price: 121.00,
         sigla: 'NEO'),
+    Currency(
+        label: 'Solana',
+        icon: 'images/solana-sol-logo.png',
+        price: 121.00,
+        sigla: 'SOL'),
+    Currency(
+        label: 'Terra Luna',
+        icon: 'images/terra-luna-luna-logo.png',
+        price: 121.00,
+        sigla: 'LUNA'),
+    Currency(
+        label: 'PAX GOLD',
+        icon: 'images/pax-gold-paxg-logo.png',
+        price: 121.00,
+        sigla: 'PAXG'),
+    Currency(
+        label: 'Polygon',
+        icon: 'images/polygon-matic-logo.png',
+        price: 121.00,
+        sigla: 'MATIC'),
+    Currency(
+        label: 'Crypto.com',
+        icon: 'images/crypto-com-coin-cro-logo.png',
+        price: 121.00,
+        sigla: 'CRO'),
+    Currency(
+        label: 'Binance Smart Chain',
+        icon: 'images/bnb-bnb-logo.png',
+        price: 121.00,
+        sigla: 'BNB'),
   ];
 }
