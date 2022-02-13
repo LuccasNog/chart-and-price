@@ -5,6 +5,8 @@ void main() {
   runApp(const MyApp());
 }
 
+String connection = "Lucas";
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
