@@ -1,53 +1,25 @@
 //classe que vai se conectar no futuro com uma API ou BD
 
+import 'dart:convert';
+
 import 'package:btc_exchange/model/Currencyclass.dart';
+import 'package:http/http.dart' as http;
+
+//var url = Uri.parse(uri)
+//
 
 class CurrencyController {
-  static List<Currency> table = [
-    Currency(
-        label: 'Bitcoin',
-        icon: 'images/bitcoin.png',
-        price: 231.858,
-        sigla: 'BTC'),
-    Currency(
-        label: 'Ethereum',
-        icon: 'images/ethereum.png',
-        price: 16.407,
-        sigla: 'ETH'),
-    Currency(
-        label: 'Litecoin',
-        icon: 'images/litecoin_icon.png',
-        price: 707.00,
-        sigla: 'LTC'),
-    Currency(
-        label: 'Dogecoin',
-        icon: 'images/doge.png',
-        price: 707.00,
-        sigla: 'DOGE'),
-    Currency(
-        label: 'Monero',
-        icon: 'images/monero.png',
-        price: 940.00,
-        sigla: 'XRM'),
-    Currency(
-        label: 'Vertcoin',
-        icon: 'images/vertcoin.png',
-        price: 2,
-        sigla: 'VERT'),
-    Currency(
-        label: 'Z-cash',
-        icon: 'images/z-cash.png',
-        price: 698.00,
-        sigla: 'ZCASH'),
-    Currency(
-        label: 'Cardano',
-        icon: 'images/ada_cardano.png',
-        price: 6.21,
-        sigla: 'ADA'),
-    Currency(
-        label: 'Neo',
-        icon: 'images/neo-cripto.png',
-        price: 121.00,
-        sigla: 'NEO'),
-  ];
+  static List<Currency> tabela = [];
+  //retornar os dados da moeda
+//  List<Currency> get table => tabela;
+
+  Future<List> SearchMoedas() async {
+    var url = Uri.parse('http://api.coinbase.com/v2/assets/search?base=brl');
+    var response = await http.get(url);
+    if (response.statusCode == 200) {
+      return jsonDecode(utf8.decode(response.bodyBytes));
+    } else {
+      throw Exception('Erro ao acessar API');
+    }
+  }
 }

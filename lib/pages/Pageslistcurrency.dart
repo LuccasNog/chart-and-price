@@ -6,7 +6,7 @@ class PageList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tabelalist = CurrencyController.table;
+    final tabelalist = CurrencyController.tabela;
 
     return Scaffold(
       appBar: AppBar(
