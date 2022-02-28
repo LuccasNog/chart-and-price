@@ -38,7 +38,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: colrstex,
+              color: colorswh,
               offset: const Offset(4, 4),
               blurRadius: 10,
               spreadRadius: 1,
@@ -54,11 +54,11 @@ class _CurrencyCardState extends State<CurrencyCard> {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(5.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
                       color: colrstex,
@@ -95,7 +95,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         widget.name,
                         style: TextStyle(
                           color: Colors.grey[900],
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -133,7 +133,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       color: widget.change.toDouble() < 0
                           ? Colors.red
                           : Colors.green,
-                      fontSize: 18,
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -147,7 +147,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       color: widget.changePercentage.toDouble() < 0
                           ? Colors.red
                           : Colors.green,
-                      fontSize: 18,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
