@@ -21,17 +21,17 @@ class _ListCurrencyState extends State<ListCurrency> {
 
   Future<List<Currency>> fetchCoin() async {
     currencyList = [];
-    print('Inicial projeto List $currencyList');
+    //print('Inicial projeto List $currencyList');
 
     final response = await http.get(Uri.parse(
         'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'));
 
-    print('Passou do response: $response');
+    //print('Passou do response: $response');
     if (response.statusCode == 200) {
       List<dynamic> values = [];
-      print(values);
+      //print(values);
       values = json.decode(response.body);
-      print(values.first);
+      // print(values.first);
       if (values.isNotEmpty) {
         for (int i = 0; i < values.length; i++) {
           if (values[i] != null) {
@@ -40,6 +40,7 @@ class _ListCurrencyState extends State<ListCurrency> {
             //print(currencyList);
           }
         }
+
         setState(() {
           currencyList;
           //print('Erro no state $currencyList');
@@ -54,7 +55,7 @@ class _ListCurrencyState extends State<ListCurrency> {
   @override
   void initState() {
     fetchCoin();
-    Timer.periodic(const Duration(seconds: 15), (timer) => fetchCoin());
+    Timer.periodic(const Duration(seconds: 5), (timer) => fetchCoin());
     super.initState();
   }
 
@@ -65,14 +66,13 @@ class _ListCurrencyState extends State<ListCurrency> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
-        title: Text(
-          'Safeway Crypto',
-          style: TextStyle(
-            color: color,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+        title: const Text(
+          'SafeWay Crypto',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.graphic_eq))
+        ],
       ),
       body: ListView.builder(
         //scrollDirection: Axis.vertical,

@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: 'initialroute',
       routes: {
-        'listcurrency': (__) => const InitialRoute(),
-        'initialroute': (__) => const ListCurrency(),
+        'initialroute': (__) => const InitialRoute(),
+        'listcurrency': (__) => const ListCurrency(),
         'graphic': (__) => const GraphicCurrency()
       },
     );
