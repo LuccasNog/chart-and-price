@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Crypto List',
+      title: 'Safeway Crypto',
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: 'initialroute',
       routes: {
-        'initialroute': (__) => const InitialRoute(),
-        'listcurrency': (__) => const ListCurrency(),
+        'listcurrency': (__) => const InitialRoute(),
+        'initialroute': (__) => const ListCurrency(),
         'graphic': (__) => const GraphicCurrency()
       },
     );
