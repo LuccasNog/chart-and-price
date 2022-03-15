@@ -1,10 +1,8 @@
-import 'dart:async';
-import 'dart:convert';
-import 'package:btc_exchange/model/Currencyclass.dart';
+import 'package:btc_exchange/pages/initialroute.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'currencycard.dart';
-//import 'package:coingecko_api/coingecko_api.dart';
+
+import 'graphic.dart';
+import 'listcurrency.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,92 +10,18 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Home(),
+    return MaterialApp(
+      title: 'Safeway Crypto',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: 'initialroute',
+      routes: {
+        'initialroute': (__) => const InitialRoute(),
+        'graphic': (__) => const GraphicCurrency(),
+        'listcurrency': (__) => const ListCurrency(),
+      },
     );
-  }
-}
-
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  Color color = Colors.white;
-
-  Future<List<Currency>> fetchCoin() async {
-    currencyList = [];
-    print('Inicial projeto List $currencyList');
-
-    final response = await http.get(Uri.parse(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'));
-
-    print('Passou do response: $response');
-    if (response.statusCode == 200) {
-      List<dynamic> values = [];
-      print(values);
-      values = json.decode(response.body);
-      print(values);
-      if (values.isNotEmpty) {
-        for (int i = 0; i < values.length; i++) {
-          if (values[i] != null) {
-            Map<String, dynamic> map = values[i];
-            currencyList.add(Currency.fromJson(map));
-            print(currencyList);
-          }
-        }
-        setState(() {
-          currencyList;
-          print('Erro no state $currencyList');
-        });
-      }
-      return currencyList;
-    } else {
-      throw Exception('Failed to load coins');
-    }
-  }
-
-  @override
-  void initState() {
-    fetchCoin();
-    Timer.periodic(const Duration(seconds: 15), (timer) => fetchCoin());
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.amber,
-          title: Text(
-            'Exchange App',
-            style: TextStyle(
-              color: color,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        body: ListView.builder(
-          //scrollDirection: Axis.vertical,
-          itemCount: currencyList.length,
-          itemBuilder: (context, index) {
-            return CurrencyCard(
-              name: currencyList[index].name,
-              symbol: currencyList[index].symbol,
-              imageUrl: currencyList[index].imageurl,
-              price: currencyList[index].price,
-              change: currencyList[index].change,
-              changePercentage: currencyList[index].changePercentage,
-            );
-          },
-        ));
   }
 }

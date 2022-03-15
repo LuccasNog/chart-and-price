@@ -34,7 +34,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
       child: Container(
         height: 100,
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
@@ -57,11 +57,11 @@ class _CurrencyCardState extends State<CurrencyCard> {
               padding: const EdgeInsets.all(5.0),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
-                      color: colrstex,
+                      color: Colors.white,
                       offset: const Offset(4, 4),
                       blurRadius: 10,
                       spreadRadius: 1,
@@ -120,7 +120,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                   Text(
                     widget.price.toString(),
                     style: TextStyle(
-                      color: Colors.grey[900],
+                      color: Colors.green,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
