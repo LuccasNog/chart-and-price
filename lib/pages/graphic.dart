@@ -7,23 +7,32 @@ class GraphicCurrency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<String, double> listmap = {
-      "Bitcoin": 2009,
-      "Ethereum": 1500,
-      "Litecoin": 800,
-      "BNB": 4000,
+      "Bitcoin": 20,
+      "Ethereum": 10,
+      "Litecoin": 8,
+      "BNB": 10,
+      "ADA": 10,
+      "DOT": 10,
+      "DOGE": 10,
+      "MATIC": 10,
+      "TRON": 10
     };
 
     final colorList = <Color>[
-      const Color.fromRGBO(255, 255, 0, 15),
+      const Color(0xffe17055),
       const Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5),
       const Color(0xff0984e3),
-      const Color(0xffe17055),
       const Color(0xff6c5ce7),
+      const Color(0xff0984e3),
+      const Color.fromRGBO(91, 253, 199, 1),
+      const Color.fromRGBO(254, 154, 92, 1),
+      const Color(0xff6c5ce7),
+      const Color.fromRGBO(175, 63, 62, 1.0),
     ];
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Exchange App'),
+          title: const Text('Safeway Crypto'),
           backgroundColor: Colors.black,
         ),
         body: Column(

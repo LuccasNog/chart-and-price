@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: 'initialroute',
       routes: {
         'initialroute': (__) => const InitialRoute(),
+        'graphic': (__) => const GraphicCurrency(),
         'listcurrency': (__) => const ListCurrency(),
-        'graphic': (__) => const GraphicCurrency()
       },
     );
   }

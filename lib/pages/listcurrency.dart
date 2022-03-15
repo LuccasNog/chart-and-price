@@ -1,3 +1,4 @@
+import 'package:btc_exchange/pages/graphic.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -55,7 +56,7 @@ class _ListCurrencyState extends State<ListCurrency> {
   @override
   void initState() {
     fetchCoin();
-    Timer.periodic(const Duration(seconds: 5), (timer) => fetchCoin());
+    Timer.periodic(const Duration(seconds: 15), (timer) => fetchCoin());
     super.initState();
   }
 
@@ -71,7 +72,15 @@ class _ListCurrencyState extends State<ListCurrency> {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.graphic_eq))
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const GraphicCurrency()),
+                );
+              },
+              icon: const Icon(Icons.graphic_eq))
         ],
       ),
       body: ListView.builder(

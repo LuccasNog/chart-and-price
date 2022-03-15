@@ -15,34 +15,20 @@ class InitialRoute extends StatefulWidget {
 class _InitialRouteState extends State<InitialRoute> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              title: const Text('Safeway Crypto'),
-              backgroundColor: Colors.black,
-            ),
-            body: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Divider(
-                    height: 60,
-                    color: Colors.transparent,
-                  ),
-                  Image.network(
-                    'https://cryptologos.cc/logos/bitsend-bsd-logo.png?v=022',
-                    width: 190,
-                  ),
-                  TextButton.icon(
-                    icon: Icon(Icons.abc),
-                    label: const Text('Entrar',
-                        overflow: TextOverflow.fade,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          height: 20,
-                        )),
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.network(
+                  'https://cryptologos.cc/logos/bitsend-bsd-logo.png?v=022',
+                  height: 120,
+                ),
+                TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -50,10 +36,18 @@ class _InitialRouteState extends State<InitialRoute> {
                             builder: (context) => const ListCurrency()),
                       );
                     },
-                  )
-                ],
-              ),
-            )));
+                    child: Text(
+                      'Entrar',
+                      overflow: TextOverflow.fade,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          height: 5,
+                          color: Colors.black),
+                    ))
+              ],
+            ),
+          ),
+        ));
   }
 }
 
